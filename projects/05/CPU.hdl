@@ -6,23 +6,23 @@
 /**
  * The Hack CPU (Central Processing unit), consisting of an ALU,
  * two registers named A and D, and a program counter named PC.
- * The CPU is designed to fetch and execute instructions written in 
+ * The CPU is designed to fetch and execute instructions written in
  * the Hack machine language. In particular, functions as follows:
- * Executes the inputted instruction according to the Hack machine 
+ * Executes the inputted instruction according to the Hack machine
  * language specification. The D and A in the language specification
  * refer to CPU-resident registers, while M refers to the external
- * memory location addressed by A, i.e. to Memory[A]. The inM input 
- * holds the value of this location. If the current instruction needs 
- * to write a value to M, the value is placed in outM, the address 
- * of the target location is placed in the addressM output, and the 
- * writeM control bit is asserted. (When writeM==0, any value may 
- * appear in outM). The outM and writeM outputs are combinational: 
- * they are affected instantaneously by the execution of the current 
- * instruction. The addressM and pc outputs are clocked: although they 
- * are affected by the execution of the current instruction, they commit 
- * to their new values only in the next time step. If reset==1 then the 
- * CPU jumps to address 0 (i.e. pc is set to 0 in next time step) rather 
- * than to the address resulting from executing the current instruction. 
+ * memory location addressed by A, i.e. to Memory[A]. The inM input
+ * holds the value of this location. If the current instruction needs
+ * to write a value to M, the value is placed in outM, the address
+ * of the target location is placed in the addressM output, and the
+ * writeM control bit is asserted. (When writeM==0, any value may
+ * appear in outM). The outM and writeM outputs are combinational:
+ * they are affected instantaneously by the execution of the current
+ * instruction. The addressM and pc outputs are clocked: although they
+ * are affected by the execution of the current instruction, they commit
+ * to their new values only in the next time step. If reset==1 then the
+ * CPU jumps to address 0 (i.e. pc is set to 0 in next time step) rather
+ * than to the address resulting from executing the current instruction.
  */
 
 CHIP CPU {
@@ -34,10 +34,42 @@ CHIP CPU {
                          // the current program (reset==0).
 
     OUT outM[16],        // M value output
-        writeM,          // Write to M? 
+        writeM,          // Write to M?
         addressM[15],    // Address in data memory (of M)
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
+    // instructionの最上位ビットが0ならAレジスタに設定するアドレス命令である
+    // そうでなければ計算命令である
+        // 下位4~6ビットはデータの格納先、下位3ビットは移動先
+    Not(in=instruction[15], out=Ainstruction); // out = アドレス命令フラグ
+    Not(in=Ainstruction, out=Cinstruction); // out = 計算命令フラグ
+
+    // Aレジスタに格納する処理
+    And(a=Cinstruction, b=instruction[5], out=ALUtoA); // out = 計算結果をAレジスタに格納するフラグ 計算命令の下位6ビットはAレジスタに格納するフラグ
+    Mux16(a=instruction,b=ALUout, sel=ALUtoA, out=Aregin); // out = Aレジスタに格納するアドレス
+    Or(a=Ainstruction, b=ALUtoA, out=loadA); // out = Aレジスタに格納するフラグ
+    ARegister(in=Aregin, load=loadA, out=Aout);
+    Mux16(a=Aout, b=inM, sel=instruction[12], out=AMout); // out = Aレジスタの値もしくはAレジスタに格納された値
+
+    // Dレジスタに格納する処理
+    And(a=Cinstruction, b=instruction[4], out=loadD); // out = Dレジスタに格納するフラグ 計算命令の下位5ビットはDレジスタに格納するフラグ
+    DRegister(in=ALUout, load=loadD, out=Dout);
+    ALU(x=Dout, y=AMout, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=ALUout, zr=ZRout, ng=NGout); // out = ALUの出力, 計算命令の7~12ビットcomp領域がALUの制御ビットに相当する
+
+    // メモリ書き込み処理
+    Or16(a=false, b=Aout, out[0..14]=addressM);
+    Or16(a=false, b=ALUout, out=outM);
+    And(a=Cinstruction, b=instruction[3], out=writeM); // out = メモリに書き込むフラグ 計算命令の下位4ビットはメモリに書き込むフラグ
+
+    And(a=ZRout, b=instruction[1], out=jeq); // out = ゼロかどうかのフラグ
+    And(a=NGout, b=instruction[2], out=jlt); // out = 負かどうかのフラグ
+    Or(a=ZRout, b=NGout, out=zeroOrNeg); // out = ゼロか負かのフラグ
+    Not(in=zeroOrNeg, out=positive); // out = 正かどうかのフラグ
+    And(a=positive, b=instruction[0], out=jgt); // out = 正かどうかのフラグ
+    Or(a=jeq, b=jlt, out=jle); // out = ゼロ以下かどうかのフラグ
+    Or(a=jle, b=jgt, out=jumpToA); // out = アドレス命令フラグ
+    And(a=Cinstruction, b=jumpToA, out=PCload); // out = PCレジスタに格納するフラグ
+    Not(in=PCload, out=PCinc); // out = PCレジスタに格納するフラグ
+    PC(in=Aout, inc=PCinc, load=PCload, reset=reset, out[0..14]=pc);
 }
