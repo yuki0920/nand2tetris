@@ -35,7 +35,7 @@ class Parser
 
     if @command.include?('=')
       @dest, @comp = @command.split('=')
-    elsif @command.include(';')
+    elsif @command.include?(';')
       @comp, @jump = @command.split(';')
     else
       raise

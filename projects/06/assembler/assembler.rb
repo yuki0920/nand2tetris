@@ -5,13 +5,14 @@ require 'byebug'
 
 
 class Assembler
-  def initialize(file_name)
-    @file_name = file_name
-  end
+  def execute(file_name)
+    input_file_name = file_name
+    dir_name = File.dirname(file_name)
+    file_name = File.basename(file_name, '.asm') + '1'
+    output_file_name = File.join(dir_name, "#{file_name}"'.hack')
 
-  def execute
-    File.open('./projects/06/add/Add1.hack', 'w') do |hack|
-      File.open('./projects/06/add/Add.asm') do |asm|
+    File.open(output_file_name, 'w') do |hack|
+      File.open(input_file_name) do |asm|
         parser = Parser.new(asm)
         while parser.has_more_commands?
           parser.advance
@@ -35,6 +36,3 @@ class Assembler
     end
   end
 end
-
-assembler = Assembler.new('dummy')
-assembler.execute
