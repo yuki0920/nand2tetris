@@ -15,16 +15,17 @@ class Parser
 
     return if @command.empty?
 
-    extract_command_type
+    set_command_type
   end
 
   def symbol
-    if @command_type == 'A_COMMAND'
+    case @command_type
+    when 'A_COMMAND'
       @command[1..-1]
-    elsif @command_type == 'L_COMMAND'
+    when 'L_COMMAND'
       @command[1..-2]
     else
-      raise
+      raise 'Not A_COMMAND or L_COMMAND'
     end
   end
 
@@ -38,19 +39,20 @@ class Parser
     elsif @command.include?(';')
       @comp, @jump = @command.split(';')
     else
-      raise
+      raise 'Not C_COMMAND'
     end
   end
 
   private
 
-  def extract_command_type
-    @command_type = if @command[0] == '@'
-      'A_COMMAND'
-    elsif @command.include?('=') || @command.include?(';')
-      'C_COMMAND'
-    else
-      'L_COMMAND'
-    end
+  def set_command_type
+    @command_type =
+      if @command[0] == '@'
+        'A_COMMAND'
+      elsif @command.include?('=') || @command.include?(';')
+        'C_COMMAND'
+      else
+        'L_COMMAND'
+      end
   end
 end

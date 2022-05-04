@@ -40,13 +40,11 @@ class Code
     'JMP' => '111',
   }
 
-  attr_reader :code
-
   def initialize(parser)
     @parser = parser
   end
 
-  def execute
+  def generate_compute_command
     "111#{comp}#{dest}#{jump}"
   end
 
