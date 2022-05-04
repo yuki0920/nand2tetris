@@ -11,7 +11,7 @@ class Parser
   end
 
   def advance
-    @command = @file.readline.gsub(%r|\s*//.+|, '').chomp
+    @command = @file.readline.gsub(%r|\s*//.+|, '').strip.chomp
 
     return if @command.empty?
 
