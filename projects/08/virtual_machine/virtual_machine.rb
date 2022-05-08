@@ -7,13 +7,14 @@ class VirtualMachine
   def execute
     path = ARGV[0]
     if path.end_with?('.vm')
-      code_writer = CodeWriter.new(path.gsub(%r|\.vm$|, '.asm'))
+      code_writer = CodeWriter.new(path.gsub(/\.vm$/, '.asm'))
       translate_file(path, code_writer)
     else
       dir = path.end_with?('/') ? path[..-2] : path
-      code_writer = CodeWriter.new("#{dir}.asm")
+      output_path = "#{dir}/#{File.basename(dir)}.asm"
+      code_writer = CodeWriter.new(output_path)
 
-      if Dir.entries(dir).any? { |file| File.basename(file) == 'Sys.vm' }
+      if Dir.entries(dir).any? {|file| File.basename(file) == 'Sys.vm' }
         code_writer.write_init
       end
 
@@ -30,7 +31,7 @@ class VirtualMachine
 
   private
 
-  def translate_file(file_name , code_writer)
+  def translate_file(file_name, code_writer)
     code_writer.set_file_name(file_name)
     parser = Parser.new(file_name)
 

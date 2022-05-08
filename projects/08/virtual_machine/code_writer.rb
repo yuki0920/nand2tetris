@@ -11,7 +11,7 @@ class CodeWriter
     'temp' => 5
   }.freeze
 
-  BASE_ADDRESSES = ['LCL', 'ARG', 'THIS', 'THAT'].freeze
+  BASE_ADDRESSES = %w(LCL ARG THIS THAT).freeze
 
   def initialize(file)
     @file = File.open(file, 'w')
@@ -34,7 +34,7 @@ class CodeWriter
     end
   end
 
-  def write_push(command, segment, index)
+  def write_push(_command, segment, index)
     if segment == 'constant'
       write_codes([
         "@#{index}",
@@ -54,7 +54,7 @@ class CodeWriter
     end
   end
 
-  def write_pop(command, segment, index)
+  def write_pop(_command, segment, index)
     if REFERENCED_SEGMENTS.keys.include?(segment)
       write_pop_to_referenced_segment(segment, index)
     elsif STATIC_SEGMENTS.keys.include?(segment)
@@ -256,7 +256,7 @@ class CodeWriter
       '0;JMP',
       "(#{l1})",
       'D=-1',
-      "(#{l2})",
+      "(#{l2})"
     ])
     write_push_from_d_register
   end
@@ -315,7 +315,8 @@ class CodeWriter
     write_code('M=D')
   end
 
-  def write_push_from_d_register # スタックに格納されたアドレスへ移動しDレジスタの値を格納。スタックポインタを進める
+  # スタックに格納されたアドレスへ移動しDレジスタの値を格納。スタックポインタを進める
+  def write_push_from_d_register
     write_codes([
       '@SP',
       'A=M',
@@ -325,7 +326,8 @@ class CodeWriter
     ])
   end
 
-  def write_pop_to_a_register # スタックポインタを戻し、スタックに格納されたアドレスへ移動
+  # スタックポインタを戻し、スタックに格納されたアドレスへ移動
+  def write_pop_to_a_register
     write_codes([
       '@SP',
       'M=M-1',

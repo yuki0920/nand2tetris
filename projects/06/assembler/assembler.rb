@@ -1,6 +1,6 @@
-require_relative './code.rb'
-require_relative './parser.rb'
-require_relative './symbol_table.rb'
+require_relative './code'
+require_relative './parser'
+require_relative './symbol_table'
 require 'byebug'
 
 class Assembler

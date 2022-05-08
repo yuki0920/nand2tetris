@@ -7,7 +7,7 @@ class VirtualMachine
   def execute
     path = ARGV[0]
     if path.end_with?('.vm')
-      code_writer = CodeWriter.new(path.gsub(%r|\.vm$|, '.asm'))
+      code_writer = CodeWriter.new(path.gsub(/\.vm$/, '.asm'))
       translate_file(path, code_writer)
     else
       dir = path.end_with?('/') ? path[..-2] : path
@@ -20,7 +20,7 @@ class VirtualMachine
 
   private
 
-  def translate_file(file_name , code_writer)
+  def translate_file(file_name, code_writer)
     code_writer.set_file_name(file_name)
     parser = Parser.new(file_name)
     while parser.has_more_commands?

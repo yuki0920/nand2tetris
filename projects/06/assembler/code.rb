@@ -27,8 +27,8 @@ class Code
     'D-M' => '1010011',
     'M-D' => '1000111',
     'D&M' => '1000000',
-    'D|M' => '1010101',
-  }
+    'D|M' => '1010101'
+  }.freeze
 
   JUMP = {
     'JGT' => '001',
@@ -37,8 +37,8 @@ class Code
     'JLT' => '100',
     'JNE' => '101',
     'JLE' => '110',
-    'JMP' => '111',
-  }
+    'JMP' => '111'
+  }.freeze
 
   def initialize(parser)
     @parser = parser

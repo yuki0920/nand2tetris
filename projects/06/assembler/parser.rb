@@ -21,7 +21,7 @@ class Parser
   def symbol
     case @command_type
     when 'A_COMMAND'
-      @command[1..-1]
+      @command[1..]
     when 'L_COMMAND'
       @command[1..-2]
     else

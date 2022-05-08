@@ -49,7 +49,7 @@ class Parser
   end
 
   def arg2
-    return unless ['C_PUSH', 'C_POP', 'C_FUNCTION', 'C_CALL' ].include?(command_type)
+    return unless %w(C_PUSH C_POP C_FUNCTION C_CALL).include?(command_type)
 
     @argument2
   end
