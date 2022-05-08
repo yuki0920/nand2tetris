@@ -10,14 +10,14 @@ class Assembler
     @symbol_table = SymbolTable.new
   end
 
-  def execute(file_name)
-    File.open(file_name) do |asm|
+  def execute(file)
+    File.open(file) do |asm|
       first_pass(asm)
 
       asm.seek(0, IO::SEEK_SET)
 
-      dir_name = File.dirname(file_name)
-      file_name = "#{File.basename(file_name, '.asm')}1"
+      dir_name = File.dirname(file)
+      file_name = "#{File.basename(file, '.asm')}"
       output_file_name = File.join(dir_name, "#{file_name}"'.hack')
       second_pass(asm, output_file_name)
     end
