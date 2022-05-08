@@ -24,6 +24,8 @@ class VirtualMachine
         translate_file(file_path, code_writer)
       end
     end
+
+    code_writer.close
   end
 
   private
@@ -58,6 +60,8 @@ class VirtualMachine
         code_writer.write_call(parser.arg1, parser.arg2)
       end
     end
+
+    parser.close
   end
 end
 

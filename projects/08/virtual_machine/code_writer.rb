@@ -11,6 +11,8 @@ class CodeWriter
     'temp' => 5
   }.freeze
 
+  BASE_ADDRESSES = ['LCL', 'ARG', 'THIS', 'THAT'].freeze
+
   def initialize(file)
     @file = File.open(file, 'w')
     @label_num = 0
@@ -108,7 +110,7 @@ class CodeWriter
     ])
     write_push_from_d_register # リターンアドレスをスタックに入れる
 
-    ['LCL', 'ARG', 'THIS', 'THAT'].each do |address|
+    BASE_ADDRESSES.each do |address|
       write_codes([
         "@#{address}",
         'D=M'
@@ -174,7 +176,7 @@ class CodeWriter
       'M=D' # SP = ARG + 1
     ])
 
-    ['THAT', 'THIS', 'ARG', 'LCL'].each do |address|
+    BASE_ADDRESSES.reverse.each do |address|
       write_codes([
         '@R13',
         'D=M-1',
@@ -190,6 +192,10 @@ class CodeWriter
       'A=M',
       '0;JMP' # goto return-address
     ])
+  end
+
+  def close
+    @file.close
   end
 
   private
@@ -325,10 +331,6 @@ class CodeWriter
       'M=M-1',
       'A=M'
     ])
-  end
-
-  def close
-    @file.close
   end
 
   def write_code(code)

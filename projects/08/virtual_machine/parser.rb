@@ -53,4 +53,8 @@ class Parser
 
     @argument2
   end
+
+  def close
+    @file.close
+  end
 end
