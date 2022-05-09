@@ -1,7 +1,6 @@
 require_relative './code'
 require_relative './parser'
 require_relative './symbol_table'
-require 'byebug'
 
 class Assembler
   def initialize
@@ -10,7 +9,11 @@ class Assembler
     @symbol_table = SymbolTable.new
   end
 
-  def execute(file)
+  def execute
+    file = ARGV[0]
+
+    return if file.nil?
+
     File.open(file) do |asm|
       first_pass(asm)
 
@@ -92,3 +95,5 @@ class Assembler
     @variable_current_address += 1
   end
 end
+
+Assembler.new.execute
