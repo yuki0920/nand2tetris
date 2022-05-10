@@ -1,10 +1,3 @@
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/10/Square/SquareGame.jack
-
-// (same as projects/09/Square/SquareGame.jack)
-
 /**
  * Implements the Square Dance game.
  * This simple game allows the user to move a black square around
@@ -18,7 +11,7 @@
 
 class SquareGame {
    field Square square; // the square of this game
-   field int direction; // the square's current direction: 
+   field int direction; // the square's current direction:
                         // 0=none, 1=up, 2=down, 3=left, 4=right
 
    /** Constructs a new Square Game. */
@@ -52,7 +45,7 @@ class SquareGame {
       var char key;  // the key currently pressed by the user
       var boolean exit;
       let exit = false;
-      
+
       while (~exit) {
          // waits for a key to be pressed
          while (key = 0) {
@@ -76,6 +69,3 @@ class SquareGame {
      return;
    }
 }
-
-
-
