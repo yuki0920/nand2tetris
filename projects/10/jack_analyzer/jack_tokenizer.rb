@@ -45,12 +45,15 @@ class JackTokenizer
     '-',
     '*',
     '/',
-    '&amp;',
+    '&',
     '|',
-    '&lt;',
-    '&gt;',
+    '<',
+    '>',
     '=',
-    '~'
+    '~',
+    '<',
+    '>',
+    '&',
   ].freeze
 
   ESCAPED_SYMBOLS = {
@@ -59,6 +62,8 @@ class JackTokenizer
     '&' => '&amp;',
   }
 
+  attr_reader :token, :remained_tokens
+
   def initialize(file)
     @file = file
     @token = nil
@@ -66,13 +71,118 @@ class JackTokenizer
     @token_type = nil
     @commented = false
     @row = nil
+    @remained_tokens = []
+  end
+
+  def execute(output_file)
+    output_file.puts('<tokens>')
+    _execute(output_file)
+    output_file.puts('</tokens>')
+  end
+
+  def _execute(output_file)
+    return if read_finished?
+
+    @token = next_token
+
+    unless @token.nil?
+      @remained_tokens << @token
+      output_file.puts("<#{tag}> #{excaped_token} </#{tag}>")
+    end
+
+    _execute(output_file)
   end
 
   def has_more_tokens?
-    !@file.eof || !@tokens.empty?
+    !@remained_tokens.empty?
   end
 
   def advance
+    @token = @remained_tokens.shift
+  end
+
+  def see_next_token(index = 0)
+    @remained_tokens[index]
+  end
+
+  def see_next_token_type(index = 0)
+    token_type(see_next_token(index))
+  end
+
+  def token_type(token = @token)
+    if KEYWORDS.keys.include?(token)
+      'KEYWORD'
+    elsif SYMBOLS.include?(token)
+      'SYMBOL'
+    elsif token =~ /^[0-9]+$/
+      'INT_CONST'
+    elsif token =~ /^".*"$/
+      'STRING_CONST'
+    else
+      'IDENTIFIER'
+    end
+  end
+
+  def tag
+    TOKEN_TYPES[token_type]
+  end
+
+  def excaped_token
+    case token_type
+    when 'STRING_CONST'
+      escaped_string_val
+    when 'SYMBOL'
+      escaped_symbol
+    else
+      @token
+    end
+  end
+
+  def keyword
+    raise "Token: #{@token}, type must be KEYWORD" unless token_type == 'KEYWORD'
+
+    @token
+  end
+
+  def symbol
+    raise "Token: #{@token}, type must be SYMBOL" unless token_type == 'SYMBOL'
+
+    @token
+  end
+
+  def escaped_symbol
+    ESCAPED_SYMBOLS[symbol] || symbol
+  end
+
+  def identifier
+    raise "Token: #{@token}, type must be IDENTIFIER" unless token_type == 'IDENTIFIER'
+
+    @token
+  end
+
+  def int_val
+    raise "Token: #{@token}, type must be INT_CONST" unless token_type == 'INT_CONST'
+
+    @token
+  end
+
+  def string_val
+    raise "Token: #{@token}, type must be STRING_CONST" unless token_type == 'STRING_CONST'
+
+    @token
+  end
+
+  def escaped_string_val
+    string_val.gsub(/"/, '')
+  end
+
+  private
+
+  def read_finished?
+    @file.eof
+  end
+
+  def next_token
     @token = nil
     @token_type = nil
 
@@ -89,7 +199,10 @@ class JackTokenizer
 
     token = @tokens.shift
 
-    return if token.nil?
+    if token.nil?
+      @token = nil
+      return
+    end
 
     @token = if token.start_with?('"') # 空白で区切られた文字列を結合
       str = token
@@ -98,59 +211,8 @@ class JackTokenizer
         str += " #{next_token}"
       end
       str
-    elsif ESCAPED_SYMBOLS.keys.include?(token)
-      ESCAPED_SYMBOLS[token]
     else
       token
     end
-  end
-
-  def token_type
-    @token_type =
-      if KEYWORDS.keys.include?(@token)
-        'KEYWORD'
-      elsif SYMBOLS.include?(@token)
-        'SYMBOL'
-      elsif @token =~ /^[0-9]+$/
-        'INT_CONST'
-      elsif @token =~ /^".*"$/
-        'STRING_CONST'
-      else
-        'IDENTIFIER'
-      end
-  end
-
-  def tag
-    TOKEN_TYPES[token_type]
-  end
-
-  def keyword
-    raise 'Token type must be KEYWORD' unless @token_type == 'KEYWORD'
-
-    @token
-  end
-
-  def symbol
-    raise 'Token type must be SYMBOL' unless @token_type == 'SYMBOL'
-
-    @token
-  end
-
-  def identifier
-    raise 'Token type must be IDENTIFIER' unless @token_type == 'IDENTIFIER'
-
-    @token
-  end
-
-  def int_val
-    raise 'Token type must be INT_CONST' unless @token_type == 'INT_CONST'
-
-    @token
-  end
-
-  def string_val
-    raise 'Token type must be STRING_CONST' unless @token_type == 'STRING_CONST'
-
-    @token
   end
 end

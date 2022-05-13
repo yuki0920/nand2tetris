@@ -1,4 +1,5 @@
 require_relative './jack_tokenizer'
+require_relative './compilation_engine'
 require 'byebug'
 
 class JackAnalyzer
@@ -21,22 +22,30 @@ class JackAnalyzer
 
   private
 
-  def compile_file(input_file)
+  def tokenize_file(input_file)
     output_file = input_file.gsub(/\.jack$/, 'T.xml')
     File.open(output_file, 'w') do |o|
-      o.puts("<tokens>\n")
-
+      o.puts('<tokens>')
       File.open(input_file, 'r') do |i|
-        tokenizer = JackTokenizer.new(i)
-        while tokenizer.has_more_tokens?
-          token = tokenizer.advance
-
-          next if token.nil?
-          # debugger
-          o.puts("<#{tokenizer.tag}> #{token.gsub(/"/, '')} </#{tokenizer.tag}>")
-        end
+        JackTokenizer.new(i).execute(o)
       end
       o.puts('</tokens>')
+    end
+  end
+
+  def compile_file(input_file)
+    puts "Compiling #{input_file}"
+
+    output_token_xml_file = input_file.gsub(/\.jack$/, 'T.xml')
+    output_xml_file = input_file.gsub(/\.jack$/, '.xml')
+    File.open(input_file, 'r') do |i|
+      tokenizer = JackTokenizer.new(i)
+      File.open(output_token_xml_file, 'w') do |o|
+        tokenizer.execute(o)
+      end
+      File.open(output_xml_file, 'w') do |o|
+        CompilationEngine.new(tokenizer, o).execute
+      end
     end
   end
 end
