@@ -205,7 +205,7 @@ class CompilationEngine
       compile_expression_list
       compile_symbol(')')
     else # class_name or var_name
-      compile_identifier # compile class_name or var_name
+      compile_class_name # compile class_name or var_name
       compile_symbol('.')
       compile_subroutine_name
       compile_symbol('(')
@@ -325,15 +325,22 @@ class CompilationEngine
   end
 
   def compile_class_name
+    write_identifier_info('category: class')
     compile_identifier
   end
 
   def compile_subroutine_name
+    write_identifier_info('category: subroutine')
     compile_identifier
   end
 
   def compile_var_name
+    write_identifier_info('declaration: var')
     compile_identifier
+  end
+
+  def write_identifier_info(value)
+    write_element('IdentifierInfo', value)
   end
 
   def write_element(element, value)
