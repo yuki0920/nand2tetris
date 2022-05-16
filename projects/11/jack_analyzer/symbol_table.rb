@@ -1,5 +1,7 @@
 class SymbolTable
-  def initializer
+  KINDS = ['static', 'field', 'arg', 'var']
+
+  def initialize
     @static_table = {}
     @field_table = {}
     @arg_table = {}
@@ -11,14 +13,22 @@ class SymbolTable
     @var_table = {}
   end
 
-  def define(name, type, kind)
+  def define(name:, type:, kind:)
+    unless KINDS.include?(kind)
+      raise "Invalid kind: #{kind}"
+    end
+
+    table = select_table(kind)
+    last_var = table.max_by { |_, v| v[:index] }
+    index = last_var ? last_var[1][:index] + 1 : 0
+
     symbol = {
       type: type,
       kind: kind,
       index: index
     }
 
-    select_table(kind)[name] = symbol
+    table[name] = symbol
   end
 
   def var_count(kind)
@@ -34,7 +44,7 @@ class SymbolTable
     select_table_by_name(name)[:type]
   end
 
-  def index_of
+  def index_of(name)
     select_table_by_name(name)[:index]
   end
 
@@ -42,14 +52,16 @@ class SymbolTable
 
   def select_table(kind)
     case kind
-    when 'STATIC'
+    when 'static'
       then @static_table
-    when 'FIELD'
+    when 'field'
       then @field_table
-    when 'ARG'
+    when 'arg'
       then @arg_table
-    when 'VAR'
+    when 'var'
       then @var_table
+    else
+      raise "Invalid kind: #{kind}"
     end
   end
 

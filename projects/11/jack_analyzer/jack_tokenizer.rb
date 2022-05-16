@@ -203,12 +203,14 @@ class JackTokenizer
       @token = nil
       return
     end
-
+    # TODO: "Test 1: expected result: 5; actual result: "を出力するようにする
+    # ;が悪さしている?
     @token = if token.start_with?('"') # 空白で区切られた文字列を結合
       str = token
       while !str.end_with?('"') do
         next_token = @tokens.shift
-        str += " #{next_token}"
+        next_str = next_token == ';' ? next_token : " #{next_token}"
+        str += next_str
       end
       str
     else

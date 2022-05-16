@@ -7,14 +7,14 @@
 <keyword> field </keyword>
 <IdentifierInfo> category: class </IdentifierInfo>
 <identifier> Square </identifier>
-<IdentifierInfo> declaration: True, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: true, kind: field, index: 0 </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> ; </symbol>
 </classVarDec>
 <classVarDec>
 <keyword> field </keyword>
 <keyword> int </keyword>
-<IdentifierInfo> declaration: True, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: true, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 <symbol> ; </symbol>
 </classVarDec>
@@ -33,7 +33,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 0 </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> = </symbol>
 <expression>
@@ -70,7 +70,7 @@
 </letStatement>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 <symbol> = </symbol>
 <expression>
@@ -107,7 +107,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> category: class </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> . </symbol>
 <IdentifierInfo> category: subroutine </IdentifierInfo>
@@ -161,7 +161,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
@@ -174,7 +174,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> category: class </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> . </symbol>
 <IdentifierInfo> category: subroutine </IdentifierInfo>
@@ -193,7 +193,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
@@ -206,7 +206,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> category: class </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> . </symbol>
 <IdentifierInfo> category: subroutine </IdentifierInfo>
@@ -225,7 +225,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
@@ -238,7 +238,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> category: class </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> . </symbol>
 <IdentifierInfo> category: subroutine </IdentifierInfo>
@@ -257,7 +257,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
@@ -270,7 +270,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> category: class </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> . </symbol>
 <IdentifierInfo> category: subroutine </IdentifierInfo>
@@ -324,21 +324,21 @@
 <varDec>
 <keyword> var </keyword>
 <keyword> char </keyword>
-<IdentifierInfo> declaration: True, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: true, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 <symbol> ; </symbol>
 </varDec>
 <varDec>
 <keyword> var </keyword>
 <keyword> boolean </keyword>
-<IdentifierInfo> declaration: True, kind: 3, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: true, kind: var, index: 1 </IdentifierInfo>
 <identifier> exit </identifier>
 <symbol> ; </symbol>
 </varDec>
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 1 </IdentifierInfo>
 <identifier> exit </identifier>
 <symbol> = </symbol>
 <expression>
@@ -355,7 +355,7 @@
 <term>
 <symbol> ~ </symbol>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 1 </IdentifierInfo>
 <identifier> exit </identifier>
 </term>
 </term>
@@ -368,7 +368,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -381,7 +381,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 <symbol> = </symbol>
 <expression>
@@ -417,7 +417,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -430,7 +430,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 1 </IdentifierInfo>
 <identifier> exit </identifier>
 <symbol> = </symbol>
 <expression>
@@ -448,7 +448,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -461,7 +461,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> category: class </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> . </symbol>
 <IdentifierInfo> category: subroutine </IdentifierInfo>
@@ -480,7 +480,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -493,7 +493,7 @@
 <statements>
 <doStatement>
 <keyword> do </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<IdentifierInfo> category: class </IdentifierInfo>
 <identifier> square </identifier>
 <symbol> . </symbol>
 <IdentifierInfo> category: subroutine </IdentifierInfo>
@@ -512,7 +512,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -525,7 +525,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 <symbol> = </symbol>
 <expression>
@@ -543,7 +543,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -556,7 +556,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 <symbol> = </symbol>
 <expression>
@@ -574,7 +574,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -587,7 +587,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 <symbol> = </symbol>
 <expression>
@@ -605,7 +605,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -618,7 +618,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: field, index: 1 </IdentifierInfo>
 <identifier> direction </identifier>
 <symbol> = </symbol>
 <expression>
@@ -641,7 +641,7 @@
 <symbol> ( </symbol>
 <expression>
 <term>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
@@ -658,7 +658,7 @@
 <statements>
 <letStatement>
 <keyword> let </keyword>
-<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<IdentifierInfo> declaration: false, kind: var, index: 0 </IdentifierInfo>
 <identifier> key </identifier>
 <symbol> = </symbol>
 <expression>

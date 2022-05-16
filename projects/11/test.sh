@@ -1,10 +1,10 @@
 targets=(
   "projects/11/Seven"
-  # "projects/11/ConvertToBin"
-  # "projects/11/Square"
-  # "projects/11/Average/"
-  # "projects/11/Pong"
-  # "projects/11/ComplexArrays"
+  "projects/11/ConvertToBin"
+  "projects/11/Square"
+  "projects/11/Average/"
+  "projects/11/Pong"
+  "projects/11/ComplexArrays"
 )
 for target in "${targets[@]}"
 do
@@ -14,16 +14,16 @@ done
 
 tests=(
   "projects/11/Seven/Main"
-  # "projects/11/ConvertToBin/Main"
-  # "projects/11/Square/Main"
-  # "projects/11/Square/Square"
-  # "projects/11/Square/SquareGame"
-  # "projects/11/Average/Main"
-  # "projects/11/Pong/Ball"
-  # "projects/11/Pong/Bat"
-  # "projects/11/Pong/Main"
-  # "projects/11/Pong/PongGame"
-  # "projects/11/ComplexArrays/Main"
+  "projects/11/ConvertToBin/Main"
+  "projects/11/Square/Main"
+  "projects/11/Square/Square"
+  "projects/11/Square/SquareGame"
+  "projects/11/Average/Main"
+  "projects/11/Pong/Ball"
+  "projects/11/Pong/Bat"
+  "projects/11/Pong/Main"
+  "projects/11/Pong/PongGame"
+  "projects/11/ComplexArrays/Main"
 )
 echo '----------------------------------------------------'
 echo "Run Tokenizer tests"
