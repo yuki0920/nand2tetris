@@ -1,0 +1,94 @@
+<class>
+<keyword> class </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Main </identifier>
+<symbol> { </symbol>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> main </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> PongGame </identifier>
+<IdentifierInfo> declaration: True, kind: 3, index: 0 </IdentifierInfo>
+<identifier> game </identifier>
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> PongGame </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> newInstance </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> game </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> PongGame </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> getInstance </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> game </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> run </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> game </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> dispose </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<symbol> } </symbol>
+</class>
