@@ -1,0 +1,544 @@
+<class>
+<keyword> class </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Main </identifier>
+<symbol> { </symbol>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> main </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 3, index: 0 </IdentifierInfo>
+<identifier> value </identifier>
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Main </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> fillMemory </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 8001 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<integerConstant> 16 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> value </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> peek </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 8000 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Main </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> convert </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> value </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> convert </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 0 </IdentifierInfo>
+<identifier> value </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 3, index: 0 </IdentifierInfo>
+<identifier> mask </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 3, index: 1 </IdentifierInfo>
+<identifier> position </identifier>
+<symbol> ; </symbol>
+</varDec>
+<varDec>
+<keyword> var </keyword>
+<keyword> boolean </keyword>
+<IdentifierInfo> declaration: True, kind: 3, index: 2 </IdentifierInfo>
+<identifier> loop </identifier>
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> loop </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<whileStatement>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> loop </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> position </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> position </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> mask </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Main </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> nextMask </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> mask </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ~ </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> position </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<integerConstant> 16 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ~ </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> value </identifier>
+</term>
+<symbol> &amp; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> mask </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> poke </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 8000 </integerConstant>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> position </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> poke </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<integerConstant> 8000 </integerConstant>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> position </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> loop </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</whileStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> nextMask </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 0 </IdentifierInfo>
+<identifier> mask </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> mask </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> mask </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> fillMemory </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 0 </IdentifierInfo>
+<identifier> startAddress </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 1 </IdentifierInfo>
+<identifier> length </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 2 </IdentifierInfo>
+<identifier> value </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<whileStatement>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> length </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> poke </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> startAddress </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 2 </IdentifierInfo>
+<identifier> value </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> length </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> length </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> startAddress </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> startAddress </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</whileStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<symbol> } </symbol>
+</class>

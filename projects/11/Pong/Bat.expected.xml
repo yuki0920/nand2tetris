@@ -1,0 +1,972 @@
+<class>
+<keyword> class </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Bat </identifier>
+<symbol> { </symbol>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 3 </IdentifierInfo>
+<identifier> height </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 4 </IdentifierInfo>
+<identifier> direction </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<subroutineDec>
+<keyword> constructor </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Bat </identifier>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> new </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 0 </IdentifierInfo>
+<identifier> Ax </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Ay </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 2 </IdentifierInfo>
+<identifier> Awidth </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 3 </IdentifierInfo>
+<identifier> Aheight </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> Ax </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Ay </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 2 </IdentifierInfo>
+<identifier> Awidth </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> height </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 3 </IdentifierInfo>
+<identifier> Aheight </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> direction </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> show </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<keyword> this </keyword>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> dispose </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> deAlloc </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> this </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> show </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> hide </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> height </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setDirection </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Adirection </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> direction </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Adirection </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> getLeft </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> getRight </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setWidth </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Awidth </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> hide </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Awidth </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> show </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> move </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> direction </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> height </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> height </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<integerConstant> 511 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 511 </integerConstant>
+</term>
+<symbol> - </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> height </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> width </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> height </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<symbol> } </symbol>
+</class>

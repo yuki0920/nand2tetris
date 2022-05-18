@@ -1,0 +1,2079 @@
+<class>
+<keyword> class </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Ball </identifier>
+<symbol> { </symbol>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 2 </IdentifierInfo>
+<identifier> lengthx </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 3 </IdentifierInfo>
+<identifier> lengthy </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 4 </IdentifierInfo>
+<identifier> d </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 5 </IdentifierInfo>
+<identifier> straightD </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 6 </IdentifierInfo>
+<identifier> diagonalD </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> boolean </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 7 </IdentifierInfo>
+<identifier> invert </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 8 </IdentifierInfo>
+<identifier> positivex </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 9 </IdentifierInfo>
+<identifier> positivey </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 10 </IdentifierInfo>
+<identifier> leftWall </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 11 </IdentifierInfo>
+<identifier> rightWall </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 12 </IdentifierInfo>
+<identifier> topWall </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 1, index: 13 </IdentifierInfo>
+<identifier> bottomWall </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+<symbol> ; </symbol>
+</classVarDec>
+<subroutineDec>
+<keyword> constructor </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Ball </identifier>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> new </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 0 </IdentifierInfo>
+<identifier> Ax </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Ay </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 2 </IdentifierInfo>
+<identifier> AleftWall </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 3 </IdentifierInfo>
+<identifier> ArightWall </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 4 </IdentifierInfo>
+<identifier> AtopWall </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 5 </IdentifierInfo>
+<identifier> AbottomWall </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 0 </IdentifierInfo>
+<identifier> Ax </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> Ay </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 10 </IdentifierInfo>
+<identifier> leftWall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 2 </IdentifierInfo>
+<identifier> AleftWall </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 11 </IdentifierInfo>
+<identifier> rightWall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 3 </IdentifierInfo>
+<identifier> ArightWall </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 6 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 12 </IdentifierInfo>
+<identifier> topWall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 4 </IdentifierInfo>
+<identifier> AtopWall </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 13 </IdentifierInfo>
+<identifier> bottomWall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 5 </IdentifierInfo>
+<identifier> AbottomWall </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 6 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> show </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<keyword> this </keyword>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> dispose </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Memory </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> deAlloc </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> this </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> show </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> true </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> hide </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setColor </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<keyword> false </keyword>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> draw </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Screen </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> drawRectangle </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> getLeft </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> getRight </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setDestination </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 1 </IdentifierInfo>
+<identifier> destx </identifier>
+<symbol> , </symbol>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 2 </IdentifierInfo>
+<identifier> desty </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 3, index: 0 </IdentifierInfo>
+<identifier> dx </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 3, index: 2 </IdentifierInfo>
+<identifier> temp </identifier>
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> lengthx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> destx </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> lengthy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 2 </IdentifierInfo>
+<identifier> desty </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> dx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Math </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> abs </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> lengthx </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> category: class </IdentifierInfo>
+<identifier> Math </identifier>
+<symbol> . </symbol>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> abs </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> lengthy </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 7 </IdentifierInfo>
+<identifier> invert </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> dx </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 7 </IdentifierInfo>
+<identifier> invert </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> temp </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> dx </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> dx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> temp </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 8 </IdentifierInfo>
+<identifier> positivex </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 2 </IdentifierInfo>
+<identifier> desty </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 9 </IdentifierInfo>
+<identifier> positivey </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> destx </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 8 </IdentifierInfo>
+<identifier> positivex </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> destx </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 9 </IdentifierInfo>
+<identifier> positivey </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 2 </IdentifierInfo>
+<identifier> desty </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> d </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+<symbol> * </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> - </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> dx </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 5 </IdentifierInfo>
+<identifier> straightD </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+<symbol> * </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 6 </IdentifierInfo>
+<identifier> diagonalD </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+<symbol> * </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> dy </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> dx </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> move </identifier>
+<symbol> ( </symbol>
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<statements>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> hide </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> d </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> d </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> d </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 5 </IdentifierInfo>
+<identifier> straightD </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> d </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 4 </IdentifierInfo>
+<identifier> d </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 6 </IdentifierInfo>
+<identifier> diagonalD </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 9 </IdentifierInfo>
+<identifier> positivey </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 7 </IdentifierInfo>
+<identifier> invert </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 7 </IdentifierInfo>
+<identifier> invert </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 8 </IdentifierInfo>
+<identifier> positivex </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 7 </IdentifierInfo>
+<identifier> invert </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 7 </IdentifierInfo>
+<identifier> invert </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ~ </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 10 </IdentifierInfo>
+<identifier> leftWall </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 10 </IdentifierInfo>
+<identifier> leftWall </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ~ </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 11 </IdentifierInfo>
+<identifier> rightWall </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 11 </IdentifierInfo>
+<identifier> rightWall </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ~ </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> &gt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 12 </IdentifierInfo>
+<identifier> topWall </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 12 </IdentifierInfo>
+<identifier> topWall </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ~ </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 13 </IdentifierInfo>
+<identifier> bottomWall </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 4 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 13 </IdentifierInfo>
+<identifier> bottomWall </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> show </identifier>
+<symbol> ( </symbol>
+<expressionList>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> bounce </identifier>
+<symbol> ( </symbol>
+<parameterList>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 2, index: 1 </IdentifierInfo>
+<identifier> bouncingDirection </identifier>
+</parameterList>
+<symbol> ) </symbol>
+<subroutineBody>
+<symbol> { </symbol>
+<varDec>
+<keyword> var </keyword>
+<keyword> int </keyword>
+<IdentifierInfo> declaration: True, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 3, index: 2 </IdentifierInfo>
+<identifier> divLengthx </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 3, index: 3 </IdentifierInfo>
+<identifier> divLengthy </identifier>
+<symbol> , </symbol>
+<IdentifierInfo> declaration: True, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+<symbol> ; </symbol>
+</varDec>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> divLengthx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> lengthx </identifier>
+</term>
+<symbol> / </symbol>
+<term>
+<integerConstant> 10 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 3 </IdentifierInfo>
+<identifier> divLengthy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 3 </IdentifierInfo>
+<identifier> lengthy </identifier>
+</term>
+<symbol> / </symbol>
+<term>
+<integerConstant> 10 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> bouncingDirection </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 10 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ~ </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> lengthx </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> &amp; </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> bouncingDirection </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> | </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 2 </IdentifierInfo>
+<identifier> lengthx </identifier>
+</term>
+<symbol> &lt; </symbol>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> &amp; </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 2, index: 1 </IdentifierInfo>
+<identifier> bouncingDirection </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 20 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 5 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 1 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 506 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 3 </IdentifierInfo>
+<identifier> divLengthy </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 50 </integerConstant>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> / </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> divLengthx </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 2 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 3 </IdentifierInfo>
+<identifier> divLengthy </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<integerConstant> 50 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> / </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> divLengthx </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 1 </IdentifierInfo>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 14 </IdentifierInfo>
+<identifier> wall </identifier>
+</term>
+<symbol> = </symbol>
+<term>
+<integerConstant> 3 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 250 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> divLengthx </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<symbol> - </symbol>
+<term>
+<integerConstant> 25 </integerConstant>
+</term>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> / </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 3 </IdentifierInfo>
+<identifier> divLengthy </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<integerConstant> 0 </integerConstant>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 2 </IdentifierInfo>
+<identifier> divLengthx </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<integerConstant> 25 </integerConstant>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+<symbol> / </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 3 </IdentifierInfo>
+<identifier> divLengthy </identifier>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+<symbol> = </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 1, index: 0 </IdentifierInfo>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<symbol> ( </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+</term>
+<symbol> * </symbol>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 4 </IdentifierInfo>
+<identifier> factor </identifier>
+</term>
+</expression>
+<symbol> ) </symbol>
+</term>
+</expression>
+<symbol> ; </symbol>
+</letStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+</statements>
+<symbol> } </symbol>
+</ifStatement>
+<doStatement>
+<keyword> do </keyword>
+<IdentifierInfo> category: subroutine </IdentifierInfo>
+<identifier> setDestination </identifier>
+<symbol> ( </symbol>
+<expressionList>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 0 </IdentifierInfo>
+<identifier> newx </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<IdentifierInfo> declaration: False, kind: 3, index: 1 </IdentifierInfo>
+<identifier> newy </identifier>
+</term>
+</expression>
+</expressionList>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
+<symbol> } </symbol>
+</class>
