@@ -5,7 +5,7 @@ class CompilationEngine
   OPERATORS = %w(+ - * / & | < > =).freeze
   UNARY_OPERATORS = {
     '~' => 'not',
-    '-' => 'neg',
+    '-' => 'neg'
   }.freeze
   KEYWORD_CONSTANTS = %w(true false null this).freeze
 
@@ -329,40 +329,38 @@ class CompilationEngine
       number_of_args = compile_expression_list
       compile_symbol(')')
       @vm_writer.write_call("#{@compiled_class_name}.#{subroutine_name}", number_of_args + 1)
-    else # instance_name.method_name
-      if @symbol_table.kind_of(@tokenizer.see_next_token)
-        instance_name = compile_class_name
-        compile_symbol('.')
-        subroutine_name = compile_subroutine_name
-        compile_symbol('(')
+    elsif @symbol_table.kind_of(@tokenizer.see_next_token) # instance_name.method_name
+      instance_name = compile_class_name
+      compile_symbol('.')
+      subroutine_name = compile_subroutine_name
+      compile_symbol('(')
 
-        case @symbol_table.kind_of(instance_name)
-        when 'static'
-          @vm_writer.write_push('static', @symbol_table.index_of(instance_name))
-        when 'field'
-          @vm_writer.write_push('this', @symbol_table.index_of(instance_name))
-        when 'arg'
-          @vm_writer.write_push('argument', @symbol_table.index_of(instance_name))
-        when 'var'
-          @vm_writer.write_push('local', @symbol_table.index_of(instance_name))
-        else
-          raise "Invalid kind: #{@symbol_table.kind_of(instance_name)}"
-        end
-
-        number_of_args = compile_expression_list
-        compile_symbol(')')
-
-        @vm_writer.write_call("#{@symbol_table.type_of(instance_name)}.#{subroutine_name}", number_of_args + 1)
-      else # class_name.method_name
-        class_name = compile_class_name # compile class_name or var_name
-        compile_symbol('.')
-        subroutine_name = compile_subroutine_name
-        compile_symbol('(')
-        number_of_args = compile_expression_list
-        compile_symbol(')')
-
-        @vm_writer.write_call("#{class_name}.#{subroutine_name}", number_of_args)
+      case @symbol_table.kind_of(instance_name)
+      when 'static'
+        @vm_writer.write_push('static', @symbol_table.index_of(instance_name))
+      when 'field'
+        @vm_writer.write_push('this', @symbol_table.index_of(instance_name))
+      when 'arg'
+        @vm_writer.write_push('argument', @symbol_table.index_of(instance_name))
+      when 'var'
+        @vm_writer.write_push('local', @symbol_table.index_of(instance_name))
+      else
+        raise "Invalid kind: #{@symbol_table.kind_of(instance_name)}"
       end
+
+      number_of_args = compile_expression_list
+      compile_symbol(')')
+
+      @vm_writer.write_call("#{@symbol_table.type_of(instance_name)}.#{subroutine_name}", number_of_args + 1)
+    else # class_name.method_name
+      class_name = compile_class_name # compile class_name or var_name
+      compile_symbol('.')
+      subroutine_name = compile_subroutine_name
+      compile_symbol('(')
+      number_of_args = compile_expression_list
+      compile_symbol(')')
+
+      @vm_writer.write_call("#{class_name}.#{subroutine_name}", number_of_args)
     end
   end
 

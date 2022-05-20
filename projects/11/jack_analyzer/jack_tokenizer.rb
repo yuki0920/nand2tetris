@@ -53,13 +53,13 @@ class JackTokenizer
     '~',
     '<',
     '>',
-    '&',
+    '&'
   ].freeze
 
   ESCAPED_SYMBOLS = {
     '<' => '&lt;',
     '>' => '&gt;',
-    '&' => '&amp;',
+    '&' => '&amp;'
   }
 
   attr_reader :token, :remained_tokens
@@ -188,9 +188,9 @@ class JackTokenizer
 
     if @tokens.empty?
       @row = @file.readline.gsub(%r|\s*//.+|, '').strip.chomp # 空行とコメントを除去
-      @tokens = @row.split(/\s+/). # 空白削除
-        flat_map {|str| str.split(%r|([();.,~\[\]\+\-])|)}. # シンボルを分離
-        reject(&:empty?)
+      @tokens = @row.split(/\s+/) # 空白削除
+        .flat_map {|str| str.split(/([();.,~\[\]+\-])/) } # シンボルを分離
+        .reject(&:empty?)
     end
 
     @commented = true if @row.start_with?('/**')
@@ -206,15 +206,15 @@ class JackTokenizer
     # TODO: "Test 1: expected result: 5; actual result: "を出力するようにする
     # ;が悪さしている?
     @token = if token.start_with?('"') # 空白で区切られた文字列を結合
-      str = token
-      while !str.end_with?('"') do
-        next_token = @tokens.shift
-        next_str = next_token == ';' ? next_token : " #{next_token}"
-        str += next_str
-      end
-      str
-    else
-      token
-    end
+               str = token
+               until str.end_with?('"')
+                 next_token = @tokens.shift
+                 next_str = next_token == ';' ? next_token : " #{next_token}"
+                 str += next_str
+               end
+               str
+             else
+               token
+             end
   end
 end
