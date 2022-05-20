@@ -1,5 +1,5 @@
 class SymbolTable
-  KINDS = ['static', 'field', 'arg', 'var']
+  KINDS = %w(static field arg var)
 
   def initialize
     @static_table = {}
@@ -19,7 +19,7 @@ class SymbolTable
     end
 
     table = select_table(kind)
-    last_var = table.max_by { |_, v| v[:index] }
+    last_var = table.max_by {|_, v| v[:index] }
     index = last_var ? last_var[1][:index] + 1 : 0
 
     symbol = {
@@ -53,13 +53,13 @@ class SymbolTable
   def select_table(kind)
     case kind
     when 'static'
-      then @static_table
+      @static_table
     when 'field'
-      then @field_table
+      @field_table
     when 'arg'
-      then @arg_table
+      @arg_table
     when 'var'
-      then @var_table
+      @var_table
     else
       raise "Invalid kind: #{kind}"
     end
