@@ -119,7 +119,7 @@ class CompilationEngine
     compile_symbol('{')
 
     number_of_locals = 0
-    while next_var_dec?
+    while next_var_dec? # ローカル変数のコンパイル
       number_of_vars = compile_var_dec
       number_of_locals += number_of_vars
     end
@@ -127,18 +127,18 @@ class CompilationEngine
     @vm_writer.write_function("#{@compiled_class_name}.#{subroutine_name}", number_of_locals)
 
     case subroutine_dec_token
-    when 'method' # これ何?
-      @vm_writer.write_push('argument', 0)
-      @vm_writer.write_pop('pointer', 0)
+    when 'method'
+      @vm_writer.write_push('argument', 0) # メソッドは第1引数にthisを渡す
+      @vm_writer.write_pop('pointer', 0) # thisのベースアドレスをスタックに積む
     when 'constructor'
       @vm_writer.write_push('constant', @symbol_table.var_count('field'))
-      @vm_writer.write_call('Memory.alloc', 1)
-      @vm_writer.write_pop('pointer', 0)
+      @vm_writer.write_call('Memory.alloc', 1) # インスタン生成性はfieldのサイズ分だけメモリを確保する
+      @vm_writer.write_pop('pointer', 0) # thisのベースアドレスをスタックに積む
     when 'function'
       # noop
     end
 
-    compile_statements
+    compile_statements # TODO: ここから
     compile_symbol('}')
     @output_file.puts '</subroutineBody>'
   end
@@ -196,9 +196,9 @@ class CompilationEngine
     compile_keyword('let')
     var_name = compile_var_name(let: true)
 
-    if next_token?('[') # array
+    if next_token?('[') # var[exp]
       compile_symbol('[')
-      compile_expression
+      compile_expression # 配列のインデックス
       compile_symbol(']')
       compile_symbol('=')
 
@@ -213,14 +213,14 @@ class CompilationEngine
         @vm_writer.write_push('local', @symbol_table.index_of(var_name))
       end
 
-      @vm_writer.write_arithmetic('add')
+      @vm_writer.write_arithmetic('add') # expression + var base_address
       @vm_writer.write_pop('temp', 2)
 
       compile_expression
 
-      @vm_writer.write_push('temp', 2)
-      @vm_writer.write_pop('pointer', 1)
-      @vm_writer.write_pop('that', 0)
+      @vm_writer.write_push('temp', 2) # 式の結果をtempスタックに積む
+      @vm_writer.write_pop('pointer', 1) # tempに格納された値をthatセグメントのベースアドレスに指定
+      @vm_writer.write_pop('that', 0) # 配列の指定したインデックスに値を代入
 
       compile_symbol(';')
     else
@@ -228,6 +228,7 @@ class CompilationEngine
       compile_expression
       compile_symbol(';')
 
+      # 変数の値を式の結果で上書きする
       case @symbol_table.kind_of(var_name)
       when 'static'
         @vm_writer.write_pop('static', @symbol_table.index_of(var_name))
@@ -316,16 +317,17 @@ class CompilationEngine
     if next_token?('(', 1) # method call
       subroutine_name = compile_subroutine_name
       compile_symbol('(')
-      @vm_writer.write_push('pointer', 0) # push this
+      @vm_writer.write_push('pointer', 0) #  thisセグメントのベースアドレスをスタックに積む
       number_of_args = compile_expression_list
       compile_symbol(')')
-      @vm_writer.write_call("#{@compiled_class_name}.#{subroutine_name}", number_of_args + 1)
+      @vm_writer.write_call("#{@compiled_class_name}.#{subroutine_name}", number_of_args + 1) # thisセグメントのベースアドレスを引数に追加
     elsif @symbol_table.kind_of(@tokenizer.see_next_token) # instance_name.method_name
       instance_name = compile_class_name
       compile_symbol('.')
       subroutine_name = compile_subroutine_name
       compile_symbol('(')
 
+      # インスタンスのベースアドレスをスタックに積む
       case @symbol_table.kind_of(instance_name)
       when 'static'
         @vm_writer.write_push('static', @symbol_table.index_of(instance_name))
@@ -342,8 +344,8 @@ class CompilationEngine
       number_of_args = compile_expression_list
       compile_symbol(')')
 
-      @vm_writer.write_call("#{@symbol_table.type_of(instance_name)}.#{subroutine_name}", number_of_args + 1)
-    else # class_name.method_name
+      @vm_writer.write_call("#{@symbol_table.type_of(instance_name)}.#{subroutine_name}", number_of_args + 1) # thisセグメントのベースアドレスを引数に追加
+    else # class_name.function_name
       class_name = compile_class_name # compile class_name or var_name
       compile_symbol('.')
       subroutine_name = compile_subroutine_name
@@ -351,7 +353,7 @@ class CompilationEngine
       number_of_args = compile_expression_list
       compile_symbol(')')
 
-      @vm_writer.write_call("#{class_name}.#{subroutine_name}", number_of_args)
+      @vm_writer.write_call("#{class_name}.#{subroutine_name}", number_of_args) # メソッドではないので引数に追加はしない
     end
   end
 
@@ -440,18 +442,18 @@ class CompilationEngine
       else
         raise 'Invalid term'
       end
-    when 'IDENTIFIER'
+    when 'IDENTIFIER' # var_name or subroutine_name
       # NOTE: identifierは先読みする
       if next_token?(['(', '.'], 1)
         compile_subroutine_call
-      elsif next_token?('[', 1) # var_name[]
+      elsif next_token?('[', 1) # var_name[] array
         compile_var_name
         compile_symbol('[')
         compile_expression
 
         @vm_writer.write_arithmetic('add')
-        @vm_writer.write_pop('pointer', 1)
-        @vm_writer.write_push('that', 0)
+        @vm_writer.write_pop('pointer', 1) # 結果をthatセグメントのベースアドレスに指定
+        @vm_writer.write_push('that', 0) # 配列の指定したインデックスに値を代入
 
         compile_symbol(']')
       else
@@ -539,7 +541,7 @@ class CompilationEngine
       @symbol_table.define(name: @tokenizer.see_next_token, type: type,  kind: kind)
     elsif let || call
       # noop
-    else # 変数の呼び出し
+    else # 変数の呼び出し 仮想メモリセグメントのアドレスをスタックに積む
       kind = @symbol_table.kind_of(@tokenizer.see_next_token)
       case kind
       when 'static'
