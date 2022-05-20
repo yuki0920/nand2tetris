@@ -54,21 +54,12 @@ class CompilationEngine
 
     keyword = compile_keyword('static', 'field')
     type = compile_type
-    kind =
-      case keyword
-      when 'static'
-        'static'
-      when 'field'
-        'field'
-      else
-        raise "Invalid keyword: #{keyword}"
-      end
 
-    compile_var_name(declaration: true, type: type, kind: kind)
+    compile_var_name(declaration: true, type: type, kind: keyword)
 
     while next_token?(',')
       compile_symbol(',')
-      compile_var_name(declaration: true, type: type, kind: kind)
+      compile_var_name(declaration: true, type: type, kind: keyword)
     end
 
     compile_symbol(';')
@@ -85,6 +76,10 @@ class CompilationEngine
     @output_file.puts '<subroutineDec>'
     keyword = compile_keyword('constructor', 'function', 'method')
 
+    if keyword == 'method' # メソッドの最初の引数はthisオブジェクト
+      @symbol_table.define(name: '$this', type: @compiled_class_name, kind: 'arg')
+    end
+
     if @tokenizer.see_next_token == 'void'
       compile_keyword('void')
     else
@@ -93,10 +88,6 @@ class CompilationEngine
 
     subroutine_name = compile_subroutine_name
     compile_symbol('(')
-
-    if keyword == 'method' # メソッドの最初の引数はthisオブジェクト
-      @symbol_table.define(name: '$this', type: @compiled_class_name, kind: 'arg')
-    end
 
     compile_parameter_list
 
@@ -120,6 +111,10 @@ class CompilationEngine
   end
 
   def compile_subroutine_body(subroutine_name, subroutine_dec_token)
+    unless %w(constructor function method).include?(subroutine_dec_token)
+      raise "Invalid #{subroutine_dec_token}"
+    end
+
     @output_file.puts '<subroutineBody>'
     compile_symbol('{')
 
@@ -141,15 +136,11 @@ class CompilationEngine
       @vm_writer.write_pop('pointer', 0)
     when 'function'
       # noop
-    else
-      raise "Invalid subroutine_dec_token: #{subroutine_dec_token}"
     end
 
     compile_statements
     compile_symbol('}')
     @output_file.puts '</subroutineBody>'
-
-    number_of_locals
   end
 
   def next_var_dec?
